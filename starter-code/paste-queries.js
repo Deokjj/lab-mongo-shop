@@ -93,9 +93,13 @@ db.products.find({"category": "ridable"})
 // PASTE DELETE PRODUCT QUERY HERE
 db.products.deleteOne({"_id":ObjectId("59498d6b09f1d29a5b070bfe")})
 
+db.products.updateOne(
+  {"_id" : ObjectId("594987dd09f1d29a5b070bf8")},
+... {$set: {blah: true}})
+
 // PASTE REVIEW QUERY HERE
 db.products.update(
-  {"_id " : ObjectId("594987dd09f1d29a5b070bf8")},
+  {"_id" : ObjectId("594987dd09f1d29a5b070bf8")},
   {$push : {"reviews" :
     {
       "name": "Shannon",
@@ -105,3 +109,6 @@ db.products.update(
     }
   }}
 )
+
+
+db.products.find({"_id" : ObjectId("594987dd09f1d29a5b070bf8")});
